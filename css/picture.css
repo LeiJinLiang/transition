@@ -1,0 +1,174 @@
+*{
+	padding:0;
+	margin: 0; 
+}
+.hidden{
+	display: none;
+}
+.hide{
+	visibility: hidden;
+}
+ul>li{
+	text-decoration: none;
+	list-style: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	content: '020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+html{
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	position: relative;
+}
+body{
+	width: auto;
+	padding: .5rem;
+	height: 100%;
+}
+.pic{
+	width: 100%;
+}
+.pic>ul>li{
+	width: 33.333%;
+    margin-bottom: .3rem; 
+}
+.pic>ul{
+	margin-left: -.3rem;
+}
+#container{
+	width: 100%;
+	position: relative;
+	background-color: red;
+	overflow: hidden;	
+}
+.placeholder:after{
+	content: '';
+	display: block;
+	margin-top:100%; 
+}
+.placeholder>img{
+	position: absolute;
+	top:0;
+	width: 100%;
+}
+.item{
+	width: auto;
+	padding-left: .3rem;
+}
+.item:nth(3n){
+	padding: 0;
+}
+
+.zoom5{
+	transform: scale(.5);
+}
+.zoom1{
+	transform: scale(1);
+	transition: transform 1s linear 2s;
+}
+
+footer{
+	width: 100%;
+	margin-top: 1rem;
+}
+footer>ul>li{
+	width: auto;
+	height: 2.5rem;
+	margin-top: .5rem;
+	background-color: pink;
+	color: #fff;
+	line-height: 2.5rem;
+	font-size: 16px;
+	text-align: left;
+	padding-left: 2rem;
+}
+@keyframes fadein{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.shadow{
+	height: 100%;
+	background-color:rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	left: -0.5rem;
+    right: 0;
+    z-index: 99; 	 
+}
+.fadein{
+	animation-name:fadein;
+  	animation-duration:1s;
+  	animation-timing-function: linear;
+  	animation-iteration-count: 1; 
+}
+.info{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	background-color: #fff;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -100px;
+	z-index: 9999;
+}
+.msg{
+	width: 100%;
+	text-align: center;
+	/*line-height: 200px;*/
+	color: pink;
+	font-size: 22px;
+	height: 2.5rem;
+	margin-top: 6rem;
+}
+article{
+	width: 100%;
+	margin-top: .5rem;
+	margin-bottom: .5rem
+}
+.toptips{
+	position: fixed;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background-color: #d30775;
+	color: #fff;
+	right: 1rem;
+	bottom: 2rem;
+	font-size: 12px;
+	text-align: center;
+	line-height: 45px;
+}
+@keyframes fadeleft{
+	0%{
+		transform: translateX(200px);	
+		transform: translate3d(0);
+	}
+	100%{
+		transform: translateX(0);
+		transform: translate3d(0);
+	}
+}
+.move{
+	animation-name:fadeleft;
+  	animation-duration:1s;
+  	animation-timing-function: linear;
+  	animation-iteration-count: 1; 
+}
+

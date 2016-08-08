@@ -1,0 +1,15 @@
+*{
+	padding:0;
+	margin: 0;
+}
+body{
+	padding: 1rem;
+}
+.demo{
+	background-color: #fff00;
+	transition: background-color 1s linear;
+}
+.demo:hover{
+	background-color: #00ffff;
+	transition: background-color 1s linear;
+}
