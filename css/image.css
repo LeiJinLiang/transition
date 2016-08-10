@@ -1,0 +1,39 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: auto;
+	padding: .5rem;
+	height: 100%;
+}
+main{
+	width: 100%;
+}
+#container{
+	width: 100%;
+	position: relative;
+	background-color: red;
+	overflow: hidden;
+}
+.placeholder:after{
+	content: '';
+	display: block;
+	margin-top:100%; 
+}
+.placeholder>img{
+	position: absolute;
+	top:0;
+	width: 100%;
+}
+.zoom5{
+	transform: scale(.5);
+}
+.zoom1{
+	transform: scale(1);
+	transition: transform 1s linear;
+}

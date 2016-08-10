@@ -40,7 +40,8 @@
                     liall[i].addEventListener('click', function() {
                         var ele = document.getElementsByClassName('shadow')[0];
                         var _msg = document.getElementsByClassName('msg')[0];
-                        _msg.textContent = 'list' + (i + 1);
+                        _msg.textContent = localStorage.getItem('index'+i);
+                        _msg.setAttribute('index',i);
                         removeClass(ele, 'hidden');
                         addClass(ele, 'fadein');
                     })
@@ -48,9 +49,15 @@
             }
         },
         _hidemsg: function() {
-            var ele = document.getElementsByClassName('shadow')[0];
+            var ele = document.getElementsByClassName('close')[0];
+            var _ele=document.getElementsByClassName('shadow')[0];
+            var temp=document.getElementsByClassName('msg')[0]; 
+            var liall=document.getElementsByClassName('list');
             ele.addEventListener('click', function() {
-                addClass(this, 'hidden');
+            	var index=temp.getAttribute('index');
+            	localStorage.setItem('index'+index,(temp.textContent));
+            	liall[index].textContent=localStorage.getItem('index'+index);
+                addClass(_ele, 'hidden');
             }, false);
         },
         _sersrc: function(ele, src) {
@@ -104,11 +111,38 @@
 	        	setTimeout(move3,1600); 
 	        	setTimeout(move4,1800);                 	
         },
+        _cachedata:function(){
+        	var msg=[],list;
+        	var list=document.getElementsByClassName('list');
+        	for(var i=0,len=list.length;i<len;i++){
+        		msg.push(list[i].textContent);
+        		localStorage.setItem('index'+i,msg[i]);
+        	}
+        	
+        },
+        _setinfo:function(){
+        	var ele=document.getElementsByClassName('msg')[0];
+        	ele.addEventListener('click',function(){
+        		this.setAttribute('contenteditable',true);
+        	},false);
+        },
+        _initdata:function(){
+        	 var liall=document.getElementsByClassName('list');
+        	 for(var i=0,len=liall.length;i<len;i++){
+        	 	if(localStorage.getItem('index0')!==''){
+        	 		liall[i].textContent=localStorage.getItem('index'+i);
+        	 	}
+        	 	
+        	 }
+        },
         init: function() {
+        	this._initdata();
+        	this._cachedata();   	
             this._showmsg();
             this._hidemsg();
             this._scrolltop();
             this._fadeleft();
+            this._setinfo();
         }
     }
     _init.init();
